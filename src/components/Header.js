@@ -1,10 +1,34 @@
 //Import a libraries for making a component
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 //Create a component
 const Header = () => {
-  return <Text>75˚</Text>;
+  const { textStyle, viewStyle } = styles;
+
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>Paintsville, KY</Text>
+    </View>
+  );
+};
+
+const styles = {
+  viewStyle: {
+    backgroundColor: '#f8f8f8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative'
+  },
+  textStyle: {
+    fontSize: 20
+  }
 };
 
 //make component available to other parts of the app
